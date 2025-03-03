@@ -1,33 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function Navbar() {
+  const [active, setactive] = useState(Number)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <nav>
+        <div className="navi1" onClick={()=> {setactive(1)}} style={active == 1? {
+          filter: 'drop-shadow(0 0 5px #FCA311)',
+          boxShadow: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px'
+        }   :  
+        {flex: 1}}>
+          Projects
+        </div>
+        <div className="navi2" onClick={()=> {setactive(2)}} style={active == 2? {
+          filter: 'drop-shadow(0 0 5px #FCA311)',
+          boxShadow: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px'
+        }   :  
+        {flex: 1}}>
+          Home
+        </div>
+        <div className="navi2" onClick={()=> {setactive(3)}} style={active == 3? {
+          filter: 'drop-shadow(0 0 5px #FCA311)',
+          boxShadow: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px'
+        }   :  
+        {flex: 1}}>
+          Contact Me
+        </div>
+      </nav>
+    </>
+  );
+}
+
+function Showcase() {
+  return (
+    <>
+      <div className='showcase-cont'>
+        <div className='showcase-title'>
+          Hi
+        </div>
+        <div className='showcase-desc'>
+          My name is Ethan and I code stuff 
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    </>
+  )
+}
+
+function App() {
+
+  return (
+    <>
+      <Navbar />
+      <Showcase />
     </>
   )
 }
