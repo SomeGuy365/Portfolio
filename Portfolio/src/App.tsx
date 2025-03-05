@@ -45,7 +45,7 @@ function Showcase() {
             I code sometimes
           </div>
           <div className='showcase-fdesc'>
-            I'm a programmer who enjoys solving problems and building useful applications. I focus on writing clean, efficient code and continuously learning new technologies.
+            I'm a programmer who enjoys solving problems and building useful applications. I focus on writing clean, efficient code and continuously learning new technologies. - ChatGPT
           </div>
         </div>
       </div>
@@ -56,9 +56,20 @@ function Showcase() {
 function Projects() {
   return (
     <>
-      <div>
-        Hellow
-      </div>
+        <div className='project'>
+          <div className='project-img'>
+            left
+          </div>
+          <div className='project-desc'>
+            right
+          </div>
+        </div>
+        <div className='project'>
+          two
+        </div>
+        <div className='project'>
+          three
+        </div>
     </>
   )
 }
@@ -67,9 +78,13 @@ function App() {
 
   return (
     <>
-      <Navbar />
+    <div>
+      <Navbar />      
+    </div>
+    <div className='main-scroll-wrapper'>
       <Showcase />
-      <Projects />
+      <Projects />   
+    </div>
     </>
   )
 }
