@@ -1,5 +1,5 @@
 import "./App.css";
-import { Navbar } from "./navbar";
+import { Navbar } from "./Components/navbar";
 import Projectcomponent from "./Components/project";
 
 function Showcase() {

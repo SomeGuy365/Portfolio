@@ -1,5 +1,5 @@
-import { useScrollValue } from "./hooks/useScrollValue";
-import { useWindowDimesions } from "./hooks/useWindowDimensions";
+import { useScrollValue } from "../hooks/useScrollValue";
+import { useWindowDimesions } from "../hooks/useWindowDimensions";
 
 export const Navbar = () => {
   const scrollposition = useScrollValue();
