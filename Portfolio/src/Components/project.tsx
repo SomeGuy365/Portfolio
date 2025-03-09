@@ -11,6 +11,8 @@ const Projectcomponent: React.FC<Props> = ({
   skills,
   languages,
 }) => {
+  
+
   return (
     <div className="project">
       <div className="project-img"></div>

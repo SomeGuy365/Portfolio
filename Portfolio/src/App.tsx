@@ -63,6 +63,7 @@ function Showcase() {
 // }
 
 function App() {
+
   return (
     <>
       <div>
@@ -70,24 +71,26 @@ function App() {
       </div>
       <div className="main-scroll-wrapper">
         <Showcase />
-        <Projectcomponent
-          title="Project 1"
-          info="info"
-          skills={["one", "two"]}
-          languages={["one", "two"]}
-        />
-        <Projectcomponent
-          title="Project 2"
-          info="info"
-          skills={["one", "two"]}
-          languages={["one", "two"]}
-        />
-        <Projectcomponent
-          title="Project 3"
-          info="info"
-          skills={["one", "two"]}
-          languages={["one", "two"]}
-        />
+        <div className="project-scroll-wrapper" id="project-scroll-wrapper">
+          <Projectcomponent
+            title="Project 1"
+            info="info"
+            skills={["one", "two"]}
+            languages={["one", "two"]}
+          />
+          <Projectcomponent
+            title="Project 2"
+            info="info"
+            skills={["one", "two"]}
+            languages={["one", "two"]}
+          />
+          <Projectcomponent
+            title="Project 3"
+            info="info"
+            skills={["one", "two"]}
+            languages={["one", "two"]}
+          />
+        </div>
       </div>
     </>
   );
