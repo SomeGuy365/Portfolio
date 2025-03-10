@@ -5,11 +5,11 @@ export const Navbar = () => {
   const scrollposition = useScrollValue();
   const { height } = useWindowDimesions();
 
-  console.log(scrollposition)
+  console.log(scrollposition);
 
   return (
     <>
-      {scrollposition < 100 ? (
+      {scrollposition < 200 ? (
         <nav className="navhigh">
           <div
             className="navi1"

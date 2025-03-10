@@ -199,13 +199,7 @@ nav > div {
 
 .project-scroll-wrapper {
   height: 100vh;
-  scroll-snap-type: y proximity;
-  overflow-y: scroll;
   scrollbar-width: none;
-}
-
-.project-scroll-wrapper ::-webkit-scrollbar {
-  background-color: red;
 }
 
 .project-scroll-wrapper > div {

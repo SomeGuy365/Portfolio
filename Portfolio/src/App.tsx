@@ -1,6 +1,8 @@
 import "./App.css";
 import { Navbar } from "./Components/navbar";
 import Projectcomponent from "./Components/project";
+import { useScrollValue } from "./hooks/useScrollValue";
+import { useWindowDimesions } from "./hooks/useWindowDimensions";
 
 function Showcase() {
   return (
@@ -20,49 +22,9 @@ function Showcase() {
   );
 }
 
-// function Projects() {
-//   return (
-//     <>
-//       <div className="project">
-//         <div className="project-img"></div>
-//         <div className="project-desc">
-//           <div className="project-title">[Title]</div>
-//           <hr style={{width: '50%',marginLeft: 0}}/>
-//           <div className="project-info">[long parahgraph]</div>
-//           <div className="project-list-cont">
-//             <div className="project-skills">
-//               Skills I learnt:
-//               <ul>
-//                 <li>Skill 1</li>
-//                 <li>Skill 2</li>
-//                 <li>Skill 3</li>
-//                 <li>Skill 4</li>
-//               </ul>
-//             </div>
-//             <div className="project-lang">
-//               Languages used:
-//               <ul>
-//                 <li>HTML</li>
-//                 <li>CSS</li>
-//                 <li>Javascript</li>
-//               </ul>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="project">
-//         <div className="project-desc">left</div>
-//         <div className="project-img">right</div>
-//       </div>
-//       <div className="project">
-//         <div className="project-img">left</div>
-//         <div className="project-desc">right</div>
-//       </div>
-//     </>
-//   );
-// }
-
 function App() {
+  const scrollposition = useScrollValue();
+  const { height } = useWindowDimesions();
 
   return (
     <>
@@ -71,12 +33,24 @@ function App() {
       </div>
       <div className="main-scroll-wrapper">
         <Showcase />
-        <div className="project-scroll-wrapper" id="project-scroll-wrapper">
+        <div
+          className="project-scroll-wrapper"
+          style={
+            scrollposition > height - 40
+              ? {
+                  scrollSnapType: "y mandatory",
+                  overflowY: "scroll",
+                }
+              : {
+                  backgroundColor: "blue",
+                }
+          }
+        >
           <Projectcomponent
             title="Project 1"
             info="info"
             skills={["one", "two"]}
-            languages={["one", "two"]}
+            languages={["HTML", "Javascript"]}
           />
           <Projectcomponent
             title="Project 2"

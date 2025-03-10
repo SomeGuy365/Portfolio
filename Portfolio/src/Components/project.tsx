@@ -11,8 +11,6 @@ const Projectcomponent: React.FC<Props> = ({
   skills,
   languages,
 }) => {
-  
-
   return (
     <div className="project">
       <div className="project-img"></div>
@@ -22,18 +20,18 @@ const Projectcomponent: React.FC<Props> = ({
         <div className="project-info">{info}</div>
         <div className="project-list-cont">
           <div className="project-skills">
-            Skills I learnt:
-            <ul>
+            Skills:
+            <ul style={{ marginTop: 0 }}>
               {skills.map((skill) => {
-                return <li>{skill}</li>;
+                return <div>- {skill}</div>;
               })}
             </ul>
           </div>
           <div className="project-lang">
-            Languages used:
-            <ul>
+            Languages involved:
+            <ul style={{ marginTop: 0 }}>
               {languages.map((language) => {
-                return <li>{language}</li>;
+                return <div>- {language}</div>;
               })}
             </ul>
           </div>
@@ -43,4 +41,4 @@ const Projectcomponent: React.FC<Props> = ({
   );
 };
 
-export default Projectcomponent
+export default Projectcomponent;
