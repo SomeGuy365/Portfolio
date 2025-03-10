@@ -132,6 +132,32 @@ nav > div {
   );
 }
 
+@keyframes start-load {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 1.2;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .showcase-inner {
   background-color: transparent;
   backdrop-filter: blur(10px);
@@ -144,6 +170,7 @@ nav > div {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  animation: start-load 1s ease;
 }
 
 .showcase-title {

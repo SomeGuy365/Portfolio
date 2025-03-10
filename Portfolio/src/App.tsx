@@ -36,9 +36,9 @@ function App() {
         <div
           className="project-scroll-wrapper"
           style={
-            scrollposition > height - 40
+            scrollposition > height - 10
               ? {
-                  scrollSnapType: "y mandatory",
+                  scrollSnapType: "y proximity",
                   overflowY: "scroll",
                 }
               : {
