@@ -4,7 +4,7 @@
   margin: 0;
   color: white;
   font-family: Source code pro;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 
 .main-scroll-wrapper {
@@ -224,10 +224,10 @@ nav > div {
 
 /*************************/
 
-.project-scroll-wrapper {
-  height: 100vh;
+/* .project-scroll-wrapper {
+  height: 200vh;
   scrollbar-width: none;
-}
+} */
 
 .project-scroll-wrapper > div {
   scroll-snap-align: start;
@@ -267,4 +267,11 @@ nav > div {
 
 .project-list-cont > div {
   flex: 1;
+}
+
+/*************************/
+
+.contact-cont {
+  background-color: red;
+  height: 100vh;
 }
