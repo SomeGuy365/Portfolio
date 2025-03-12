@@ -1,7 +1,6 @@
 import "./App.css";
 import { Navbar } from "./Components/navbar";
 import Projectcomponent from "./Components/project";
-import { useScrollstopped } from "./hooks/useScrollstopped";
 import { useScrollValue } from "./hooks/useScrollValue";
 import { useWindowDimesions } from "./hooks/useWindowDimensions";
 
@@ -24,7 +23,36 @@ function Showcase() {
 }
 
 function Contact() {
-  return <div className="contact-cont">hellow</div>;
+  return (
+    <div className="contact-cont">
+      <div className="contact-links">
+        <div className="contact-links-github">
+          Github <br />
+          <img
+            src="\src\assets\Github-Logo.svg"
+            alt="nu uh"
+            width={50}
+            height={50}
+          />
+        </div>
+        <div className="contact-links-linkedin">
+          LinkedIn <br />
+          <img
+            src="\src\assets\Linkedin_icon.svg"
+            alt="nu uh"
+            width={50}
+            height={50}
+          />
+        </div>
+      </div>
+      <div
+        className="contact-email"
+        onClick={() => navigator.clipboard.writeText("ethanjdenton1@gmail.com")}
+      >
+        ethanjdenton1@gmail.com
+      </div>
+    </div>
+  );
 }
 
 function App() {
@@ -32,16 +60,14 @@ function App() {
   const { height } = useWindowDimesions();
 
   window.onscrollend = () => {
-    if (scrollposition > height && scrollposition < height* 3) {
-      console.log("in bounds")
-      let closest : number = Math.round(scrollposition/height)
-      console.log("closest:" + closest)
-      let pro = document.getElementById(String(closest))
+    if (scrollposition > height - 200 && scrollposition < height * 3 + 10) {
+      let closest: number = Math.round(scrollposition / height);
+      let pro = document.getElementById(String(closest));
       if (pro !== null) {
-        pro.animate({scrollTop: 0})
+        window.scrollTo({ top: height * closest, behavior: "smooth" });
       }
     }
-  }
+  };
 
   return (
     <>
@@ -50,19 +76,7 @@ function App() {
       </div>
       <div className="main-scroll-wrapper">
         <Showcase />
-        <div
-          className="project-scroll-wrapper"
-          // style={
-          //   scrollposition > height - 10 && scrollposition < height * 2
-          //     ? {
-          //         scrollSnapType: "y mandatory",
-          //         overflowY: "scroll",
-          //       }
-          //     : {
-          //         overflowY: "hidden",
-          //       }
-          // }
-        >
+        <div className="project-scroll-wrapper">
           <Projectcomponent
             title="Project 1"
             info="info"

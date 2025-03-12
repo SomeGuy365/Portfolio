@@ -4,7 +4,7 @@
   margin: 0;
   color: white;
   font-family: Source code pro;
-  /* scrollbar-width: none; */
+  scrollbar-width: none;
 }
 
 .main-scroll-wrapper {
@@ -224,11 +224,6 @@ nav > div {
 
 /*************************/
 
-/* .project-scroll-wrapper {
-  height: 200vh;
-  scrollbar-width: none;
-} */
-
 .project-scroll-wrapper > div {
   scroll-snap-align: start;
 }
@@ -272,6 +267,55 @@ nav > div {
 /*************************/
 
 .contact-cont {
-  background-color: red;
-  height: 100vh;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(20, 33, 61, 1) 80%
+  );
+}
+
+.contact-links {
+  width: 40vh;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  height: 10vh;
+  display: flex;
+}
+
+.contact-links > div {
+  flex: 1;
+  text-align: center;
+}
+
+.contact-links-github > img {
+  filter: invert(1);
+  margin-top: 5px;
+}
+
+.contact-links-linkedin > img {
+  margin-top: 5px;
+}
+
+.contact-email {
+  width: fit-content;
+  background-color: transparent;
+  filter: blur(1);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: box-shadow 0.25s;
+}
+
+.contact-email:hover {
+  cursor: pointer;
+  box-shadow: rgba(41, 53, 79, 0.25) 0px 54px 55px,
+  rgba(41, 53, 79, 0.25) 0px -12px 30px, rgba(41, 53, 79, 0.25) 0px 4px 6px,
+  rgba(41, 53, 79, 0.25) 0px 12px 13px, rgba(41, 53, 79, 0.25) 0px -3px 5px;
 }

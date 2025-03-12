@@ -25,7 +25,14 @@ export const Navbar = () => {
           >
             Home
           </div>
-          <div className="navi2">Contact Me</div>
+          <div
+            className="navi2"
+            onClick={() => {
+              window.scrollTo({ top: height * 4, behavior: "smooth" });
+            }}
+          >
+            Contact Me
+          </div>
         </nav>
       ) : (
         <nav className="navlow">
@@ -41,7 +48,14 @@ export const Navbar = () => {
           >
             Projects
           </div>
-          <div className="navilow2">Contact Me</div>
+          <div
+            className="navilow2"
+            onClick={() => {
+              window.scrollTo({ top: height * 4, behavior: "smooth" });
+            }}
+          >
+            Contact Me
+          </div>
         </nav>
       )}
     </>
