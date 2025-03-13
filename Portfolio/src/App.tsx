@@ -59,14 +59,21 @@ function App() {
   const scrollposition = useScrollValue();
   const { height } = useWindowDimesions();
 
+  let timer: number;
+
   window.onscrollend = () => {
-    if (scrollposition > height - 200 && scrollposition < height * 3 + 10) {
-      let closest: number = Math.round(scrollposition / height);
-      let pro = document.getElementById(String(closest));
-      if (pro !== null) {
-        window.scrollTo({ top: height * closest, behavior: "smooth" });
-      }
+    if (timer !== null) {
+      console.log("clear")
+      window.clearTimeout(timer);
     }
+
+    timer = window.setTimeout(() => {
+      if (scrollposition > height - 200 && scrollposition < height * 3 + 10) {
+        let closest: number = Math.round(scrollposition / height);
+        window.scrollTo({ top: height * closest, behavior: "smooth" });
+        console.log("Stopped:"+closest)
+      }
+    }, 100);
   };
 
   return (
@@ -82,21 +89,18 @@ function App() {
             info="info"
             skills={["one", "two"]}
             languages={["HTML", "Javascript"]}
-            id="1"
           />
           <Projectcomponent
             title="Project 2"
             info="info"
             skills={["one", "two"]}
             languages={["one", "two"]}
-            id="2"
           />
           <Projectcomponent
             title="Project 3"
             info="info"
             skills={["one", "two"]}
             languages={["one", "two"]}
-            id="3"
           />
         </div>
         <Contact />

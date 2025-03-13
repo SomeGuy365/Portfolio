@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 
+// NOT USED, KEEP IF NEEDED
+
 export const useScrollstopped = () => {
     const [scrollstop, setscrollstop] = useState(false)
     let timer : number

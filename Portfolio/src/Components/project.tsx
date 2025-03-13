@@ -3,7 +3,6 @@ interface Props{
   info: string;
   skills: string[];
   languages: string[];
-  id: string
 }
 
 const Projectcomponent: React.FC<Props> = ({
@@ -11,10 +10,9 @@ const Projectcomponent: React.FC<Props> = ({
   info,
   skills,
   languages,
-  id
 }) => {
   return (
-    <div className="project" id={id}>
+    <div className="project">
       <div className="project-img"></div>
       <div className="project-desc">
         <div className="project-title">{title}</div>
