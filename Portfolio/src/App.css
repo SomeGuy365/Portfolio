@@ -161,7 +161,7 @@ nav > div {
 .showcase-inner {
   background-color: transparent;
   backdrop-filter: blur(10px);
-  height: 60%;
+  height: fit-content;
   margin-left: 45vh;
   margin-right: 45vh;
   color: white;
@@ -171,6 +171,7 @@ nav > div {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   animation: start-load 1s ease;
+  padding-bottom: 4%;
 }
 
 .showcase-title {
@@ -216,17 +217,23 @@ nav > div {
   }
 }
 
-@media screen and (max-height: 1000px) {
+@media  screen and (max-width: 1080px) {
+  .showcase-title {
+    font-size: 64px;
+  }
   .showcase-fdesc {
-    font-size: 24px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .showcase-inner {
+    margin-left: 1vh;
+    margin-right: 1vh;
   }
 }
 
 /*************************/
-
-.project-scroll-wrapper > div {
-  scroll-snap-align: start;
-}
 
 .project {
   background-color: purple;
@@ -264,6 +271,16 @@ nav > div {
   flex: 1;
 }
 
+@media screen and (max-width: 1200px) {
+  .project {
+    flex-direction: column;
+  }
+
+  .project-title {
+    padding-top: 2vh;
+  }
+}
+
 /*************************/
 
 .contact-cont {
@@ -294,7 +311,6 @@ nav > div {
   color: white;
 }
 
-
 .contact-links-github > img {
   filter: invert(1);
   margin-top: 5px;
@@ -319,8 +335,8 @@ nav > div {
 .contact-email:hover {
   cursor: pointer;
   box-shadow: rgba(41, 53, 79, 0.25) 0px 54px 55px,
-  rgba(41, 53, 79, 0.25) 0px -12px 30px, rgba(41, 53, 79, 0.25) 0px 4px 6px,
-  rgba(41, 53, 79, 0.25) 0px 12px 13px, rgba(41, 53, 79, 0.25) 0px -3px 5px;
+    rgba(41, 53, 79, 0.25) 0px -12px 30px, rgba(41, 53, 79, 0.25) 0px 4px 6px,
+    rgba(41, 53, 79, 0.25) 0px 12px 13px, rgba(41, 53, 79, 0.25) 0px -3px 5px;
 }
 
 .contact-email-hover {
