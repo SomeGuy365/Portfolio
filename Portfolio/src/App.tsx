@@ -23,32 +23,51 @@ function Showcase() {
 }
 
 function Contact() {
+  let timer2: number;
+  const emailclick = () => {
+    navigator.clipboard.writeText("ethanjdenton1@gmail.com");
+    let element = document.getElementById("contact-email-hover");
+    if (element) {
+      if (timer2 !== null) {
+        console.log("dissapear");
+        element.style.opacity = "1";
+      }
+      timer2 = window.setTimeout(() => {
+        element.style.opacity = "0";
+      }, 2000);
+    }
+  };
+
   return (
     <div className="contact-cont">
       <div className="contact-links">
-        <div className="contact-links-github">
-          Github <br />
-          <img
-            src="\src\assets\Github-Logo.svg"
-            alt="nu uh"
-            width={50}
-            height={50}
-          />
-        </div>
-        <div className="contact-links-linkedin">
-          LinkedIn <br />
-          <img
-            src="\src\assets\Linkedin_icon.svg"
-            alt="nu uh"
-            width={50}
-            height={50}
-          />
-        </div>
+        <a href="https://github.com/SomeGuy365" target="_blank">
+          <div className="contact-links-github">
+            Github <br />
+            <img
+              src="\src\assets\Github-Logo.svg"
+              alt="nu uh"
+              width={50}
+              height={50}
+            />
+          </div>
+        </a>
+        <a>
+          <div className="contact-links-linkedin">
+            LinkedIn <br />
+            <img
+              src="\src\assets\Linkedin_icon.svg"
+              alt="nu uh"
+              width={50}
+              height={50}
+            />
+          </div>
+        </a>
       </div>
-      <div
-        className="contact-email"
-        onClick={() => navigator.clipboard.writeText("ethanjdenton1@gmail.com")}
-      >
+      <div className="contact-email-hover" id="contact-email-hover">
+        Copied &#10004;
+      </div>
+      <div className="contact-email" onClick={emailclick}>
         ethanjdenton1@gmail.com
       </div>
     </div>
@@ -63,7 +82,7 @@ function App() {
 
   window.onscrollend = () => {
     if (timer !== null) {
-      console.log("clear")
+      console.log("clear");
       window.clearTimeout(timer);
     }
 
@@ -71,7 +90,7 @@ function App() {
       if (scrollposition > height - 200 && scrollposition < height * 3 + 10) {
         let closest: number = Math.round(scrollposition / height);
         window.scrollTo({ top: height * closest, behavior: "smooth" });
-        console.log("Stopped:"+closest)
+        console.log("Stopped:" + closest);
       }
     }, 100);
   };
