@@ -7,10 +7,6 @@
   scrollbar-width: none;
 }
 
-.main-scroll-wrapper {
-  height: 100vh;
-}
-
 nav {
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
