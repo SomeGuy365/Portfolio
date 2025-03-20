@@ -37,18 +37,21 @@ function App() {
       <div>
         <Projectcomponent
           title="Project 1"
-          info="info"
-          skills={["one", "two"]}
-          languages={["HTML", "Javascript"]}
+          desc="A quick description of the project"
+          info="Detailed information around the techniques and languages used in the project and the things used within it.Talk about the problems enountered during development and the skills used to get past them whilst making the intricate and extensive design elements of the project clear"
+          skills={["Advanced React", "Problem Solving"]}
+          languages={["HTML","CSS", "Typescript"]}
         />
         <Projectcomponent
           title="Project 2"
+          desc="b"
           info="info"
           skills={["one", "two"]}
           languages={["one", "two"]}
         />
         <Projectcomponent
           title="Project 3"
+          desc="c"
           info="info"
           skills={["one", "two"]}
           languages={["one", "two"]}

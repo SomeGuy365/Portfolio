@@ -1,8 +1,9 @@
-interface Props{
+interface Props {
   title: string;
   info: string;
   skills: string[];
   languages: string[];
+  desc: string;
 }
 
 const Projectcomponent: React.FC<Props> = ({
@@ -10,6 +11,7 @@ const Projectcomponent: React.FC<Props> = ({
   info,
   skills,
   languages,
+  desc
 }) => {
   return (
     <div className="project">
@@ -17,6 +19,9 @@ const Projectcomponent: React.FC<Props> = ({
       <div className="project-desc">
         <div className="project-title">{title}</div>
         <hr style={{ width: "50%", marginLeft: 0 }} />
+        <div className="project-qdesc">
+          {desc}
+        </div>
         <div className="project-info">{info}</div>
         <div className="project-list-cont">
           <div className="project-skills">
