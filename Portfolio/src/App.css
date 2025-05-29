@@ -213,7 +213,7 @@ nav > div {
   }
 }
 
-@media  screen and (max-width: 1080px) {
+@media screen and (max-width: 1080px) {
   .showcase-title {
     font-size: 64px;
   }

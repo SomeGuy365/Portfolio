@@ -5,10 +5,12 @@ import Projectcomponent from "./Components/project";
 import { useScrollValue } from "./hooks/useScrollValue";
 import { useWindowDimesions } from "./hooks/useWindowDimensions";
 import { Showcase } from "./Components/Showcase";
+import { useState } from "react";
 
 function App() {
   const scrollposition = useScrollValue();
   const { height } = useWindowDimesions();
+  const [lastnum, setlastnum] = useState(0);
 
   //SCROLL SNAPPING
 
@@ -22,8 +24,11 @@ function App() {
     timer = window.setTimeout(() => {
       if (scrollposition > height - 200 && scrollposition < height * 3 + 10) {
         let closest: number = Math.round(scrollposition / height);
-        window.scrollTo({ top: height * closest, behavior: "smooth" });
-        console.log("Stopped:" + closest);
+        if (closest != lastnum) {
+          setlastnum(closest);
+          window.scrollTo({ top: height * closest, behavior: "smooth" });
+          console.log("Stopped:" + closest);
+        }
       }
     }, 100);
   };
@@ -40,7 +45,7 @@ function App() {
           desc="A quick description of the project"
           info="Detailed information around the techniques and languages used in the project and the things used within it.Talk about the problems enountered during development and the skills used to get past them whilst making the intricate and extensive design elements of the project clear"
           skills={["Advanced React", "Problem Solving"]}
-          languages={["HTML","CSS", "Typescript"]}
+          languages={["HTML", "CSS", "Typescript"]}
         />
         <Projectcomponent
           title="Project 2"
